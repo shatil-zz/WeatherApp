@@ -69,7 +69,8 @@ class _CitySearchRowState extends State<CitySearchBox> {
                 ),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                  child: Text('search',
+                  child: Text('Search',
+                      key: const Key("search_city"),
                       style: Theme.of(context).textTheme.bodyLarge),
                 ),
               ),
