@@ -12,7 +12,8 @@ import 'package:weather_app/repository/weather_repository.dart';
 import 'package:weather_app/screens/weather_screen.dart';
 import 'package:weather_app/utils/temparature.dart';
 
-import '../test/unit/test_weather_provider.mocks.dart';
+import '../test/widget/weather_screen_test.mocks.dart';
+
 
 @GenerateMocks([WeatherRepository])
 final _repository = MockWeatherRepository();

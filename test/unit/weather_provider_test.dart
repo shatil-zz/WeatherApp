@@ -7,7 +7,8 @@ import 'package:weather_app/providers/weather_provider.dart';
 import 'package:weather_app/repository/weather_repository.dart';
 import 'package:weather_app/utils/temparature.dart';
 
-import 'test_weather_provider.mocks.dart';
+import 'weather_provider_test.mocks.dart';
+
 
 
 @GenerateMocks([WeatherRepository])
