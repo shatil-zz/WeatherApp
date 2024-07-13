@@ -3,14 +3,23 @@
 Weather App
 
 ## Getting Started
+## To Run App run the bellow command
+## (Select one android device if there are multiple devicess)
+flutter pub get
+flutter run
 
-This project is a starting point for a Flutter application.
+## Run unit test and widget test
+## Generate mock classes before run
+dart run build_runner build --delete-conflicting-outputs
+flutter test
 
-A few resources to get you started if this is your first Flutter project:
+##Run integration test
+## Generate mock classes before run
+dart run build_runner build --delete-conflicting-outputs
+flutter drive --driver=test_driver/integration_test.dart --target=integration_test/weather_app_test.dart
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+##API key for Open Weather Map
+I have generate and added a key.
+For simplicity I have put the real key in the project.
+But in real case we may use a debug/dev key which can be specific to developer device
+and replace the key from git when build an apk from CI/CD
