@@ -9,30 +9,32 @@ class WeatherScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        width: double.infinity,
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            colors: AppColors.rainGradient,
+      body: SingleChildScrollView(
+        child: Container(
+          width: double.infinity,
+          height: MediaQuery.of(context).size.height,
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              colors: AppColors.rainGradient,
+            ),
           ),
-        ),
-        child: const SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              SizedBox(
-                height: 60,
-              ),
-              CitySearchBox(),
-              SizedBox(
-                height: 40,
-              ),
-              CurrentWeather(),
-              Spacer()
-            ],
+          child: const SafeArea(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                SizedBox(
+                  height: 60,
+                ),
+                CitySearchBox(),
+                SizedBox(
+                  height: 40,
+                ),
+                CurrentWeather(),
+              ],
+            ),
           ),
         ),
       ),

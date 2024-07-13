@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 import 'package:weather_app/providers/weather_provider.dart';
+import 'package:weather_app/repository/weather_repository.dart';
 import 'package:weather_app/screens/weather_screen.dart';
 import 'package:weather_app/utils/text_styles.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
     ]);
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle.dark);
     return ChangeNotifierProvider<WeatherProvider>(
-      create: (context) => WeatherProvider(),
+      create: (context) => WeatherProvider(WeatherRepository()),
       child: MaterialApp(
           title: 'Weather App',
           theme: ThemeData(

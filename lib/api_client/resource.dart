@@ -31,16 +31,22 @@ class Resources<T> {
         resources.message = "City not found";
         resources.status = ResourceStatus.ERROR;
       default:
-        resources.message = "Unknown Error";
+        resources.message = "Unknown Error in api";
         resources.status = ResourceStatus.ERROR;
     }
     return resources;
   }
 
-  factory Resources.fromStatus(
-      {status = ResourceStatus.EMPTY, message, model}) {
+  factory Resources.fromStatus({required status}) {
     final resources = Resources<T>();
     resources.status = status;
+    return resources;
+  }
+
+  factory Resources.error({required String message}) {
+    final resources = Resources<T>();
+    resources.status = ResourceStatus.ERROR;
+    resources.message = message;
     return resources;
   }
 }

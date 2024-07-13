@@ -17,17 +17,15 @@ class CurrentWeather extends StatelessWidget {
             Text(provider.cityName,
                 style: Theme.of(context).textTheme.headlineMedium),
             const SizedBox(
-              height: 40,
+              height: 10,
             ),
             if (provider.resources.isLoading)
               const Center(child: CircularProgressIndicator()),
             if (provider.resources.isSuccess)
               CurrentWeatherContents(data: provider.resources.model!),
             if (provider.resources.isError)
-              Text(
-                provider.resources.message ?? "",
-                style: Theme.of(context).textTheme.bodyLarge
-              )
+              Text(provider.resources.message ?? "",
+                  style: Theme.of(context).textTheme.bodyLarge)
           ],
         );
       },
@@ -43,16 +41,17 @@ class CurrentWeatherContents extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    final temp = data.temp.celsius.toInt().toString();
+    final temp = "${data.temp.celsius.toInt().toString()}°";
     final minTemp = data.minTemp.celsius.toInt().toString();
     final maxTemp = data.maxTemp.celsius.toInt().toString();
     final highAndLow = 'H:$maxTemp° L:$minTemp°';
     return Column(
-      mainAxisSize: MainAxisSize.min,
+      mainAxisSize: MainAxisSize.max,
       children: [
-        WeatherIconImage(iconUrl: data.iconUrl, size: 120),
+        WeatherIconImage(iconUrl: data.iconUrl, size: 100),
         Text(temp, style: textTheme.displayMedium),
-        Text(highAndLow, style: textTheme.bodyMedium),
+        Text(highAndLow, style: textTheme.bodyLarge),
+        Text(data.description, style: textTheme.bodyLarge),
       ],
     );
   }
