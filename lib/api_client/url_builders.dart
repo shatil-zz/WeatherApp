@@ -1,4 +1,5 @@
-String apiKey = "d89dcd7804cec9d5fe3a531c224a141a";
+
+import 'package:weather_app/api_client/api_keys.dart';
 
 class UrlBuilder {
   static final UrlBuilder _instance = UrlBuilder._internal();
@@ -29,7 +30,7 @@ class UrlBuilder {
 
   Map<String, dynamic> cityQueryParameters(String city) => {
         "q": city,
-        "appid": apiKey,
+        "appid": weatherApiKey,
         "units": "metric",
       };
 }
